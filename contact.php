@@ -12,19 +12,9 @@
 
 <body>
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
+    include 'connection.php';
 
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password);
-
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
-    $sql = "SELECT links FROM zikarweb.socials";
+    $sql = "SELECT links FROM socials";
     $res = mysqli_query($conn, $sql);
 
     $socialLinks = [];
@@ -38,7 +28,7 @@
 
     <header class="d-flex p-3">
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="./home.php" class="nav-link hover-zoom" aria-current="page">Home</a>
+            <li class="nav-item"><a href="./index.php" class="nav-link hover-zoom" aria-current="page">Home</a>
             </li>
             <li class="nav-item"><a href="./about.php" class="nav-link hover-zoom">About</a></li>
             <li class="nav-item"><a href="./portofolio.php" class="nav-link hover-zoom">Portofolio</a></li>

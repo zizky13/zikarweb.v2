@@ -12,19 +12,9 @@
 
 <body>
   <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
+  include 'connection.php';
 
-  // Create connection
-  $conn = mysqli_connect($servername, $username, $password);
-
-  // Check connection
-  if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
-
-  $sql = "SELECT framework FROM zikarweb.about";
+  $sql = "SELECT framework FROM about";
   $res = mysqli_query($conn, $sql);
   $techs = [];
 
@@ -45,7 +35,7 @@
   ?>
   <header class="d-flex p-3">
     <ul class="nav nav-pills">
-      <li class="nav-item"><a href="./home.php" class="nav-link hover-zoom" aria-current="page">Home</a>
+      <li class="nav-item"><a href="./index.php" class="nav-link hover-zoom" aria-current="page">Home</a>
       </li>
       <li class="nav-item"><a href="./about.php" class="nav-link hover-zoom  active">About</a></li>
       <li class="nav-item"><a href="./portofolio.php" class="nav-link hover-zoom">Portofolio</a></li>
@@ -216,7 +206,7 @@
     </div>
 
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      <button type="button" class="btn btn-primary btn-lg px-4 gap-3 hover-zoom"><a href="./portofolio.html">See what
+      <button type="button" class="btn btn-primary btn-lg px-4 gap-3 hover-zoom"><a href="./portofolio.php">See what
           I've
           built</a></button>
     </div>
